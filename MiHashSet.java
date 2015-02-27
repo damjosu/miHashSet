@@ -42,6 +42,13 @@ public class MiHashSet {
         return encontrado;
     }
     
+    /**
+     * Vacia el conjunto
+     */
+    public void clear() {
+        conjunto = new int[0];
+    }
+    
     public void print() {
         int i = 0;
         while (i < conjunto.length) {
