@@ -21,22 +21,15 @@ public class MiHashSet {
      * estuviera en el conjunto, false en caso contrario.
      */
     public boolean add(int valor) {
-        boolean encontrado = false;
-        int i = 0;
-        int cont = 0;
-        while ((i < conjunto.length)&& !(encontrado)) {
-            if (valor == conjunto[i]) {
-                encontrado = true;
-            }
-            i++;
-        }
+        boolean encontrado = contains(valor);
+        int i = 0;        
         if (!encontrado) {
-            int temp[] = new int[i + 1];
-            while (cont < conjunto.length) {
-                temp[cont] = conjunto[cont];
-                cont++;
+            int temp[] = new int[conjunto.length + 1];
+            while (i < conjunto.length) {
+                temp[i] = conjunto[i];
+                i++;
             }
-            temp[cont] = valor;
+            temp[i] = valor;
             conjunto = temp;
         }        
         return encontrado;
@@ -47,6 +40,24 @@ public class MiHashSet {
      */
     public void clear() {
         conjunto = new int[0];
+    }
+    
+    /**
+     * Comprueba si contiene el elemento.
+     * @param elemento El elemento a buscar la ocurrencia.
+     * @return encontrado Devuelve true si contiene el elemento,
+     * false en caso contrario.
+     */
+    public boolean contains(int elemento) {
+        boolean encontrado = false;
+        int i = 0;
+        while ((i < conjunto.length)&& !(encontrado)) {
+            if (elemento == conjunto[i]) {
+                encontrado = true;
+            }
+            i++;
+        }
+        return encontrado;
     }
     
     public void print() {
