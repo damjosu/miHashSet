@@ -60,6 +60,15 @@ public class MiHashSet {
         return encontrado;
     }
     
+    /**
+     * Comprueba si el conjunto esta vacio.
+     * @return Devuelve true si esta vacio,
+     * false en caso contrario.
+     */
+    public boolean isEmpty() {
+        return (conjunto.length == 0);
+    }
+    
     public void print() {
         int i = 0;
         while (i < conjunto.length) {
