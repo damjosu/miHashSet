@@ -6,14 +6,14 @@
 public class MiHashSet {
     // Conjunto de números enteros.
     private int conjunto[];
-    
+
     /**
      * Constructor de la clase MiHashSet
      */
     public MiHashSet() {
         conjunto = new int[0];
     }
-    
+
     /**
      * Añade un elemento al conjunto.
      * @param valor El valor del elemento a añadir.
@@ -22,9 +22,9 @@ public class MiHashSet {
      */
     public boolean add(int valor) {
         boolean encontrado = contains(valor);
+        int temp[] = new int[conjunto.length + 1];
         int i = 0;        
-        if (!encontrado) {
-            int temp[] = new int[conjunto.length + 1];
+        if (!encontrado) {            
             while (i < conjunto.length) {
                 temp[i] = conjunto[i];
                 i++;
@@ -34,14 +34,14 @@ public class MiHashSet {
         }        
         return encontrado;
     }
-    
+
     /**
      * Vacia el conjunto
      */
     public void clear() {
         conjunto = new int[0];
     }
-    
+
     /**
      * Comprueba si contiene el elemento.
      * @param elemento El elemento a buscar la ocurrencia.
@@ -59,7 +59,7 @@ public class MiHashSet {
         }
         return encontrado;
     }
-    
+
     /**
      * Comprueba si el conjunto esta vacio.
      * @return Devuelve true si esta vacio,
@@ -68,11 +68,49 @@ public class MiHashSet {
     public boolean isEmpty() {
         return (conjunto.length == 0);
     }
-    
+
+    /**
+     * Elimina un elemento del conjunto.
+     * @param elemento El elmento a eliminar.
+     * @return encontrado Devuelve true si existía, 
+     * false en caso contrario.
+     */
+    public boolean remove(int elemento) {
+        boolean encontrado = contains(elemento);
+        boolean eliminado = false;
+        int temp[] = new int[conjunto.length - 1];
+        int i = 0;   
+        int cont = 0;
+        if (encontrado) {
+            while (i < conjunto.length && !(eliminado)) {
+                if (conjunto[i] == elemento) {
+                    for (; cont < i; cont++) {
+                        temp[cont] = conjunto[cont];
+                    }
+                    for (;cont < temp.length; cont++) {
+                        temp[cont] = conjunto[cont + 1];
+                    }
+                    conjunto = temp;  
+                    eliminado = true;
+                }
+                i++;
+            }
+        }        
+        return encontrado;
+    }    
+
     public void print() {
         int i = 0;
         while (i < conjunto.length) {
             System.out.println(conjunto[i]);
+            i++;
+        }
+    }
+
+    private void print(int con[]) {
+        int i = 0;
+        while (i < con.length) {
+            System.out.println(con[i]);
             i++;
         }
     }
