@@ -98,7 +98,14 @@ public class MiHashSet {
         }        
         return encontrado;
     }    
-
+    
+    /**
+     * Devuelve el número de elementos del conjunto.
+     */
+    public int size() {
+        return conjunto.length;
+    }
+    
     public void print() {
         int i = 0;
         while (i < conjunto.length) {
