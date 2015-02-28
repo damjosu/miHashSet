@@ -25,9 +25,8 @@ public class MiHashSet {
         int temp[] = new int[conjunto.length + 1];
         int i = 0;        
         if (!encontrado) {            
-            while (i < conjunto.length) {
+            for (; i < conjunto.length; i++) {
                 temp[i] = conjunto[i];
-                i++;
             }
             temp[i] = valor;
             conjunto = temp;
@@ -98,27 +97,39 @@ public class MiHashSet {
         }        
         return encontrado;
     }    
-    
+
     /**
      * Devuelve el número de elementos del conjunto.
      */
     public int size() {
         return conjunto.length;
     }
-    
+
+    /**
+     * Devuelve una cadena conteniendo todos los elementos 
+     * del conjunto separados por comas y entre corchetes.
+     */
+    public String toString() {
+        String cadena = "[]"; 
+        if (conjunto.length != 0) {
+            cadena = "[" + conjunto[0];
+            for (int i = 1; i < conjunto.length; i++) {
+                cadena += ", " + conjunto[i];
+            }
+            cadena += "]";            
+        }        
+        return cadena;
+    }
+
     public void print() {
-        int i = 0;
-        while (i < conjunto.length) {
-            System.out.println(conjunto[i]);
-            i++;
+        for (int i = 0; i < conjunto.length; i++) {
+            System.out.println(conjunto[i]);  
         }
     }
 
     private void print(int con[]) {
-        int i = 0;
-        while (i < con.length) {
+        for (int i = 0; i < con.length; i++) {
             System.out.println(con[i]);
-            i++;
         }
     }
 }
