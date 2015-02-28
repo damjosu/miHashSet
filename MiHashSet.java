@@ -33,7 +33,17 @@ public class MiHashSet {
         }        
         return encontrado;
     }
-
+    
+    /**
+     * Devuelve el elemento en base al indice especificado.
+     * @param indice El indice para buscar el elemento.
+     * @return elemento El elemento a devolver.
+     */
+    private int get(int indice) {
+        return conjunto[indice];
+    }
+    
+    
     /**
      * Vacia el conjunto
      */
@@ -120,7 +130,27 @@ public class MiHashSet {
         }        
         return cadena;
     }
-
+    
+    /**
+     * Devuelve verdadero si el parámetro es igual al onjunto
+     * sobre el que se invoca y falso en otro caso.
+     * @param otroConjunto El otro conjunto a buscar la equivalencia.
+     */
+    public boolean equals(MiHashSet otroConjunto) {
+        boolean coinciden = false;
+        int i = 0;
+        if(otroConjunto.size() == conjunto.length) {
+            coinciden = true;
+            while ((i < conjunto.length) && !(coinciden)) {
+                if (conjunto[i] != otroConjunto.get(i)) {
+                    coinciden = false;
+                }
+                i++;
+            }
+        }
+        return coinciden;
+    }
+    
     public void print() {
         for (int i = 0; i < conjunto.length; i++) {
             System.out.println(conjunto[i]);  
