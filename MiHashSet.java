@@ -151,15 +151,4 @@ public class MiHashSet {
         return coinciden;
     }
     
-    public void print() {
-        for (int i = 0; i < conjunto.length; i++) {
-            System.out.println(conjunto[i]);  
-        }
-    }
-
-    private void print(int con[]) {
-        for (int i = 0; i < con.length; i++) {
-            System.out.println(con[i]);
-        }
-    }
 }
