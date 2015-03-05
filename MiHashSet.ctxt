@@ -28,5 +28,5 @@ comment8.target=java.lang.String\ toString()
 comment8.text=\r\n\ Devuelve\ una\ cadena\ conteniendo\ todos\ los\ elementos\ \r\n\ del\ conjunto\ separados\ por\ comas\ y\ entre\ corchetes.\r\n
 comment9.params=otroConjunto
 comment9.target=boolean\ equals(MiHashSet)
-comment9.text=\r\n\ Devuelve\ verdadero\ si\ el\ par\u00E1metro\ es\ igual\ al\ onjunto\r\n\ sobre\ el\ que\ se\ invoca\ y\ falso\ en\ otro\ caso.\r\n\ @param\ otroConjunto\ El\ otro\ conjunto\ a\ buscar\ la\ equivalencia.\r\n
+comment9.text=\r\n\ Devuelve\ verdadero\ si\ el\ par\u00E1metro\ es\ igual\ al\ onjunto\r\n\ sobre\ el\ que\ se\ invoca\ y\ falso\ en\ otro\ caso.\r\n\ @param\ otroConjunto\ El\ otro\ conjunto\ a\ buscar\ la\ equivalencia.\r\n\ @return\ Si\ coinciden\ o\ no.\r\n
 numComments=10

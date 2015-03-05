@@ -135,6 +135,7 @@ public class MiHashSet {
      * Devuelve verdadero si el parámetro es igual al onjunto
      * sobre el que se invoca y falso en otro caso.
      * @param otroConjunto El otro conjunto a buscar la equivalencia.
+     * @return Si coinciden o no.
      */
     public boolean equals(MiHashSet otroConjunto) {
         boolean coinciden = false;
@@ -142,7 +143,7 @@ public class MiHashSet {
         if(otroConjunto.size() == conjunto.length) {
             coinciden = true;
             while ((i < conjunto.length) && !(coinciden)) {
-                if (conjunto[i] != otroConjunto.get(i)) {
+                if (!(otroConjunto.contains(conjunto[i]))) {
                     coinciden = false;
                 }
                 i++;
